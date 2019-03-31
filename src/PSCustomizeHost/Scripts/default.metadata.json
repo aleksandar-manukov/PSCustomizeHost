@@ -1,0 +1,21 @@
+{
+    "DefaultLocation": "C:\\Workspaces",
+    "GitMetadata": {
+        "ShowCurrentBranch": true,
+        "BranchColor": "Yellow"
+    },
+    "HostColors": {
+        "BackgroundColor": "Black",
+        "ForegroundColor": "Green",
+        "ErrorBackgroundColor": "Black",
+        "ErrorForegroundColor": "Red",
+        "WarningBackgroundColor": "Black",
+        "WarningForegroundColor": "Yellow",
+        "DebugBackgroundColor": "Black",
+        "DebugForegroundColor": "Blue",
+        "VerboseBackgroundColor": "Black",
+        "VerboseForegroundColor": "White",
+        "ProgressBackgroundColor": "Black",
+        "ProgressForegroundColor": "Gray"
+    }
+}
