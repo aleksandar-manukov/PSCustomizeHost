@@ -35,9 +35,12 @@ if (Test-Path -Path "$ScriptPath\$ScriptName.metadata.json")
     $ProfileMetadata = Get-Content -Path "$ScriptPath\$ScriptName.metadata.json" | ConvertFrom-Json;
 }
 
+$CurrentLocation = Get-Location
+
 if ("DefaultLocation" -in $ProfileMetadata.PSObject.Properties.Name -and
     $ProfileMetadata.DefaultLocation -and
-    $ProfileMetadata.DefaultLocation -ne "")
+    $ProfileMetadata.DefaultLocation -ne "" -and
+    $CurrentLocation.Path -eq $HOME)
 {
     Set-Location $ProfileMetadata.DefaultLocation;
 }
@@ -162,8 +165,8 @@ else
 # SIG # Begin signature block
 # MIIFaQYJKoZIhvcNAQcCoIIFWjCCBVYCAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUpE04DkgopPoXHRzkHuxR0scf
-# dzKgggMMMIIDCDCCAfCgAwIBAgIQWdT/1OINnrNDRG1QR8IoNzANBgkqhkiG9w0B
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUdaHGW7ReQYSdTj1UNUF3FvUt
+# Q1ugggMMMIIDCDCCAfCgAwIBAgIQWdT/1OINnrNDRG1QR8IoNzANBgkqhkiG9w0B
 # AQsFADASMRAwDgYDVQQDDAdQQy1BTEVLMB4XDTE5MDExOTE3MTMxM1oXDTIwMDEx
 # OTE3MzMxM1owEjEQMA4GA1UEAwwHUEMtQUxFSzCCASIwDQYJKoZIhvcNAQEBBQAD
 # ggEPADCCAQoCggEBAMohVYQRaEn0aAZQTyJOiqrx9+1/fWeDQQm1v6sdxYNaAh+A
@@ -182,11 +185,11 @@ else
 # 5UUTda7xxRJ05Sjv0F6Er9ycMYIBxzCCAcMCAQEwJjASMRAwDgYDVQQDDAdQQy1B
 # TEVLAhBZ1P/U4g2es0NEbVBHwig3MAkGBSsOAwIaBQCgeDAYBgorBgEEAYI3AgEM
 # MQowCKACgAChAoAAMBkGCSqGSIb3DQEJAzEMBgorBgEEAYI3AgEEMBwGCisGAQQB
-# gjcCAQsxDjAMBgorBgEEAYI3AgEVMCMGCSqGSIb3DQEJBDEWBBR4nQoDiwxWlAdY
-# ropjKRNZ2nyy9TANBgkqhkiG9w0BAQEFAASCAQA5Rekhl5q7MYSOK9g6Z41u2nyd
-# YsifJ/MfT1Wj3I0ZBAPkLOiLkLLfg6BMN0M5CKi++xtPATsTrmr7M/HxzdpMNGv9
-# 763NyCSAVEDPTA3QTfsrjZaPSX6nSZSjaeLITsY205ALPn6sJjyAsTwzqnrN3ikF
-# oHdXqIRaoqJZeRlfmUwcRro+7FodmuZ4Wo4Cfn19oUStKDcKbzF1d97+PDGnT0V7
-# 7djjK8gyhvCpEDr8cY9N0f/xy5pAjDBtCCpT02CmoKD0n5BK2OyDPkrJPmUzDYnd
-# KrPELXyn2T1sc4VwjsEk0M9cy8grvELA8bRUBs8TvsOrzGL7a7wcV48VtZNH
+# gjcCAQsxDjAMBgorBgEEAYI3AgEVMCMGCSqGSIb3DQEJBDEWBBSF3ZPagvySCgaO
+# s9goA3Rg5NR2wjANBgkqhkiG9w0BAQEFAASCAQBu4rY7e2fvIoHrtmmjEnVLHU0o
+# 00KBUDJxnDvDDFqcmL8FXHKJMDxLGO1cMHNA2lMXZIOU5CkbXeYysl8HugJVaLcb
+# koU6u5q/ojfMxAy6CU44KWcgzQnZQbhakpTgO3ypYOB038dR7JKbLi06wwfjhxdK
+# 569/Elh62qEcLepUKeMaQuc5A9L7VyyfHtOFh82NSpvCK1xZ5H4lkjaY82RqqkAY
+# 34tKl1htZHSCJlC7bi2Sn6E4aa94Ddz/Uojgx6Vefvy5DPRi4clIYud6fNU++YK4
+# QVdo1dkwZAN3DASg9JLy1J8gIN2SWn58j6qLIDmVsRcEkDe/22vh/U+hpFVs
 # SIG # End signature block
